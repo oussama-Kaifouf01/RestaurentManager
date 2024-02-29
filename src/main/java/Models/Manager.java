@@ -31,8 +31,4 @@ public class Manager
     {
         staff.getWaiters().add(waiter);
     }
-
-
-
-
 }

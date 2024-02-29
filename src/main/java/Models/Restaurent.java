@@ -11,7 +11,7 @@ public class Restaurent
         this.name = name;
         this.manager = manager;
         this.customers = new ArrayList<>();
-        Staff staff = new Staff();
+        this.staff = new Staff();
 
     }
 

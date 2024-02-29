@@ -9,9 +9,10 @@ public class Order
         this.orderId = orderId;
         this.orderItems = orderItems;
         this.totalPrice = 0;
+        orderId++;
     }
 
-    private int orderId;
+    private static int orderId=0;
     private ArrayList<OrderItem> orderItems;
     private int totalPrice;
 

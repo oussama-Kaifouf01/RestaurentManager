@@ -26,8 +26,7 @@ public class Menu
         try (FileReader reader = new FileReader(filePath)) {
             Menu menu = gson.fromJson(reader, menuType);
 
-            System.out.println(menu);
-//            this.meals=menu.getMeals();
+            this.meals=menu.getMeals();
         }
     }
 

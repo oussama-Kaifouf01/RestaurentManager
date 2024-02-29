@@ -28,4 +28,12 @@ public class Staff
     public void setKitchenStaff(ArrayList<KitchenStaff> kitchenStaff) {
         this.kitchenStaff = kitchenStaff;
     }
+
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "waiters=" + waiters +
+                ", kitchenStaff=" + kitchenStaff +
+                '}';
+    }
 }

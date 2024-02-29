@@ -43,4 +43,14 @@ public class Waiter
     public void setCustomersToServe(ArrayList<Customer> customersToServe) {
         this.customersToServe = customersToServe;
     }
+
+    @Override
+    public String toString() {
+        return "Waiter{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", picture='" + picture + '\'' +
+                ", customersToServe=" + customersToServe +
+                '}';
+    }
 }
