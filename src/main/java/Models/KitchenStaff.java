@@ -1,14 +1,17 @@
-﻿
+package Models;
 
 import java.util.ArrayList;
 
 
-class KitchenStaff
+public class KitchenStaff
+
 {
-    public KitchenStaff(int id, String name, ArrayList<Order> ordersToFulfill) {
-        this.id = id;
+    private static int index = 0;
+    public KitchenStaff(String name) {
+        this.id = index;
         this.name = name;
         this.ordersToFulfill = new ArrayList<>();
+        index++;
     }
 
     private int id;
