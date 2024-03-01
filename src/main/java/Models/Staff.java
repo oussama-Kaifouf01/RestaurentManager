@@ -1,18 +1,19 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.concurrent.RunnableScheduledFuture;
 
 
 public class Staff
 {
-    public Staff() {
+    public Staff(Chief chief) {
         this.waiters = new ArrayList<>();
-        this.kitchenStaff = new ArrayList<>();
+        this.chief = chief;
     }
 
     private ArrayList<Waiter> waiters;
-    private ArrayList<KitchenStaff> kitchenStaff;
 
+    private Chief chief;
     public ArrayList<Waiter> getWaiters() {
         return waiters;
     }
@@ -21,19 +22,11 @@ public class Staff
         this.waiters = waiters;
     }
 
-    public ArrayList<KitchenStaff> getKitchenStaff() {
-        return kitchenStaff;
+    public Chief getChief() {
+        return chief;
     }
 
-    public void setKitchenStaff(ArrayList<KitchenStaff> kitchenStaff) {
-        this.kitchenStaff = kitchenStaff;
-    }
-
-    @Override
-    public String toString() {
-        return "Staff{" +
-                "waiters=" + waiters +
-                ", kitchenStaff=" + kitchenStaff +
-                '}';
+    public void setChief(Chief chief) {
+        this.chief = chief;
     }
 }

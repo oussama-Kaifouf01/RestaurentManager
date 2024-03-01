@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class Restaurent
 {
-    public Restaurent(String name, Manager manager) {
+    public Restaurent(String name, Manager manager,Chief chief) {
         this.menu= new Menu();
         this.name = name;
         this.manager = manager;
         this.customers = new ArrayList<>();
-        this.staff = new Staff();
+        this.staff = new Staff(chief);
 
     }
 
@@ -55,5 +55,6 @@ public class Restaurent
 
     public void addCustomer(Customer customer) {
         this.customers.add(customer);
+        this.staff.getChief().getOrdersToFulfill().add(customer.getOrder());
     }
 }

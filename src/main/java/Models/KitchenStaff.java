@@ -10,13 +10,12 @@ public class KitchenStaff
     public KitchenStaff(String name) {
         this.id = index;
         this.name = name;
-        this.ordersToFulfill = new ArrayList<>();
         index++;
     }
 
     private int id;
     private String name;		
-    private ArrayList<Order> ordersToFulfill;
+
 
     public int getId() {
         return id;
@@ -34,11 +33,4 @@ public class KitchenStaff
         this.name = name;
     }
 
-    public ArrayList<Order> getOrdersToFulfill() {
-        return ordersToFulfill;
-    }
-
-    public void setOrdersToFulfill(ArrayList<Order> ordersToFulfill) {
-        this.ordersToFulfill = ordersToFulfill;
-    }
-}
+   }

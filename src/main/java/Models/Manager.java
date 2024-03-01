@@ -24,7 +24,7 @@ public class Manager
 
     public void addKitchenStaff(Staff staff,KitchenStaff kitchenStaff)
     {
-        staff.getKitchenStaff().add(kitchenStaff);
+        staff.getChief().getKitchenStaff().add(kitchenStaff);
     }
 
     public void addWaiter(Staff staff,Waiter waiter)

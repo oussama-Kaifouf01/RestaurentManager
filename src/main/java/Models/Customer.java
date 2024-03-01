@@ -3,11 +3,12 @@ package Models;
 public class Customer
 {
 
-    public Customer( Order order, boolean isComplain) {
+    public Customer(Order order) {
         this.tableId = tableId;
         this.order = order;
-        this.isComplain = isComplain;
+        this.isComplain = false;
         this.tableId++;
+
     }
 
     private static int tableId=0;

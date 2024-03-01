@@ -5,11 +5,14 @@ import java.util.ArrayList;
 
 public class Order
 {
-    public Order(int orderId, ArrayList<OrderItem> orderItems) {
+    public Order(ArrayList<OrderItem> orderItems) {
         this.orderId = orderId;
         this.orderItems = orderItems;
         this.totalPrice = 0;
-        orderId++;
+        for (OrderItem orderItem: orderItems) {
+            this.totalPrice=+ orderItem.getMeal().getPrice() * orderItem.getQuantity();
+        }
+        this.orderId++;
     }
 
     private static int orderId=0;
@@ -40,5 +43,11 @@ public class Order
         this.totalPrice = totalPrice;
     }
 
-
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderItems=" + orderItems +
+                ", totalPrice=" + totalPrice +
+                '}';
+    }
 }

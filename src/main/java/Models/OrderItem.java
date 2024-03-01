@@ -34,4 +34,13 @@ public class OrderItem
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "meal=" + meal +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
+    }
 }
