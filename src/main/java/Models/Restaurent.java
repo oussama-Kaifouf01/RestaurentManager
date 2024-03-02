@@ -58,7 +58,6 @@ public class Restaurent
         this.staff.getChief().getOrdersToFulfill().add(customer.getOrder());
     }
 
-
 }
 
 

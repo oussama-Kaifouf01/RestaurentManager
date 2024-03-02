@@ -18,14 +18,13 @@ public class Chief {
     public ArrayList<Order> getOrdersToFulfill() {
         return ordersToFulfill;
     }
-    public void setOrdersToFulfill(ArrayList<Order> ordersToFulfill) {
-        this.ordersToFulfill = ordersToFulfill;
-    }
-
-
-
     public String getName() {
         return name;
+    }
+
+    public void assignOrderToKitchenStaff(KitchenStaff kitchenStaff,Order order)
+    {
+        kitchenStaff.getOrdersToFullfill().push(order);
     }
 
     public void setName(String name) {
@@ -45,6 +44,8 @@ public class Chief {
     }
 
     public void setKitchenStaff(ArrayList<KitchenStaff> kitchenStaff) {
+
+        //test
         this.kitchenStaff = kitchenStaff;
     }
 }

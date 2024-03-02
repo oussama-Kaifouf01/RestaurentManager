@@ -1,6 +1,7 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 
 public class KitchenStaff
@@ -10,13 +11,14 @@ public class KitchenStaff
     public KitchenStaff(String name) {
         this.id = index;
         this.name = name;
+        ordersToFullfill=new Stack<>();
         index++;
     }
 
     private int id;
     private String name;		
 
-
+    private Stack<Order> ordersToFullfill;
     public int getId() {
         return id;
     }
@@ -33,4 +35,8 @@ public class KitchenStaff
         this.name = name;
     }
 
-   }
+    public Stack<Order> getOrdersToFullfill() {
+        return ordersToFullfill;
+    }
+
+}
