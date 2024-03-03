@@ -1,33 +1,8 @@
-﻿class Manager
-{
+const mongoose = require('mongoose');
 
-constructor (/*String*/ name)                
-{
-    this.Name = null;                            
-}                    
-
-/*String*/ getName ()            
-{
-    
-}                
-
-setName (/*String*/ name)            
-{
-    
-}                
-
-addMeal (/*Menu*/ menu, /*Meal*/ meal)            
-{
-    
-}                
-
-addKitchenStaff (/*Staff*/ staff, /*KitchenStaff*/ kitchenStaff)            
-{
-    
-}                
-
-addWaiter (/*Staff*/ staff, /*Waiter*/ waiter)            
-{
-    
-}                
+const managerSchema = new mongoose.Schema({
+    name:String
 }
+)
+
+module.exports = mongoose.model('Manager', managerSchema);

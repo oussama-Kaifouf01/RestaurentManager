@@ -1,29 +1,21 @@
-﻿class Staff
-{
+const mongoose = require('mongoose');
 
-constructor (/*Chief*/ chief)                
-{
-this.waiters = null;                            
-this.chief = null;                            
-}                    
 
-/*ArrayList<Waiter>*/ getWaiters ()            
-{
+const staffSchema = new mongoose.Schema({
+   chief:
+   {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Chief'
+   }
+   ,
+   waiters:
+   {
+    waiters: [{
+           type: mongoose.Schema.Types.ObjectId,
+           ref: 'Waiter'
+       }]
+   }
+})
 
-}                
 
-setWaiters (/*ArrayList<Waiter>*/ waiters)            
-{
-
-}                
-
-/*Chief*/ getChief ()            
-{
-
-}                
-
-setChief (/*Chief*/ chief)            
-{
-
-}                
-}
+module.exports = mongoose.model('Staff', staffSchema);

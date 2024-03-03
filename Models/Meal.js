@@ -1,68 +1,11 @@
-﻿class Meal
-{
+const mongoose = require('mongoose');
 
-constructor (/*String*/ name, /*String*/ picture, /*Integer*/ price, /*ArrayList<String>*/ ingredients, /*String*/ category)                
-{
-this.name = null;                            
-this.picture = null;                            
-this.price = null;                            
-this.ingredients = null;                            
-this.category = null;                            
-this.meals = null;                            
-}                    
+const mealSchema = new mongoose.Schema({
+    name:String,
+    picture:String,
+    price:Number,
+    ingredients: [String],
+    category:String
+});
 
-/*String*/ getName ()            
-{
-
-}                
-
-setName (/*String*/ name)            
-{
-
-}                
-
-/*String*/ getPicture ()            
-{
-
-}                
-
-setPicture (/*String*/ picture)            
-{
-
-}                
-
-/*Integer*/ getPrice ()            
-{
-
-}                
-
-setPrice (/*Integer*/ price)            
-{
-
-}                
-
-/*ArrayList<String>*/ getIngredients ()            
-{
-
-}                
-
-setIngredients (/*ArrayList<String>*/ ingredients)            
-{
-
-}                
-
-/*String*/ getCategory ()            
-{
-
-}                
-
-setCategory (/*String*/ category)            
-{
-
-}                
-
-/*String*/ toString ()            
-{
-
-}                
-}
+module.exports = mongoose.model('Meal', mealSchema);

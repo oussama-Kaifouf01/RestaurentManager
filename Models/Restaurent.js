@@ -1,62 +1,27 @@
-﻿class Restaurent
-{
+const mongoose = require('mongoose');
 
-constructor (/*String*/ name, /*Manager*/ manager, /*Chief*/ chief)                
-{
-this.name = null;                            
-this.manager = null;                            
-this.menu = null;                            
-this.staff = null;                            
-this.customers = null;                            
-}                    
 
-/*String*/ getName ()            
-{
+const restaurentSchema = new mongoose.Schema({
+    name: String,
+    manager: {
+      type:mongoose.Schema.Types.ObjectId,
+      ref: 'Manager'
 
-}                
+    },
+    menu: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Menu'
+    },
+    staff:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Staff'
+    },
+    customers:
+    {
+        customers: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Customer'
+        }] }
+  });
 
-setName (/*String*/ name)            
-{
-
-}                
-
-/*Manager*/ getManager ()            
-{
-
-}                
-
-setManager (/*Manager*/ manager)            
-{
-
-}                
-
-static /*Menu*/ getMenu ()            
-{
-
-}                
-
-static setMenu (/*Menu*/ menu)            
-{
-
-}                
-
-/*Staff*/ getStaff ()            
-{
-
-}                
-
-setStaff (/*Staff*/ staff)            
-{
-
-}                
-
-/*ArrayList<Customer>*/ getCustomers ()            
-{
-
-}                
-
-addCustomer (/*Customer*/ customer)            
-{
-
-}                
-}
+  module.exports = mongoose.model('Restaurent', restaurentSchema);

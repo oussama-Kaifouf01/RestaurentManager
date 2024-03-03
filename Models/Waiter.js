@@ -1,47 +1,17 @@
-﻿class Waiter
-{
+const mongoose = require('mongoose');
 
-constructor (/*String*/ name, /*String*/ picture)                
-{
-this.index = 0;                            
-this.id = null;                            
-this.name = null;                            
-this.picture = null;                            
-this.customersToServe = null;                            
-}                    
 
-/*String*/ getName ()            
-{
+const waiterSchema = new mongoose.Schema({
+   name:String,
+   picture:String,
+   customersToServe:
+   {
+    customersToServe: [{
+           type: mongoose.Schema.Types.ObjectId,
+           ref: 'Customer'
+       }]
+   }
+})
 
-}                
 
-setName (/*String*/ name)            
-{
-
-}                
-
-/*String*/ getPicture ()            
-{
-
-}                
-
-setPicture (/*String*/ picture)            
-{
-
-}                
-
-/*ArrayList<Customer>*/ getCustomersToServe ()            
-{
-
-}                
-
-setCustomersToServe (/*ArrayList<Customer>*/ customersToServe)            
-{
-
-}                
-
-/*String*/ toString ()            
-{
-
-}                
-}
+module.exports = mongoose.model('Waiter', waiterSchema);

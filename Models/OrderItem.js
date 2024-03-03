@@ -1,45 +1,17 @@
-﻿class OrderItem
-{
+const mongoose = require('mongoose');
 
-constructor (/*Meal*/ meal, /*Integer*/ quantity)                
-{
-this.meal = null;                            
-this.quantity = null;                            
-this.price = null;                            
-}                    
 
-/*Meal*/ getMeal ()            
-{
 
-}                
+const orderItemSchema = new mongoose.Schema({
+    meal:
+    {
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'Meal'
+    }
+    ,
+    quantity:Number,
+    price:Number
+})
 
-setMeal (/*Meal*/ meal)            
-{
 
-}                
-
-/*Integer*/ getQuantity ()            
-{
-
-}                
-
-setQuantity (/*Integer*/ quantity)            
-{
-
-}                
-
-/*Integer*/ getPrice ()            
-{
-
-}                
-
-setPrice (/*Integer*/ price)            
-{
-
-}                
-
-/*String*/ toString ()            
-{
-
-}                
-}
+module.exports = mongoose.model('OrderItem', orderItemSchema);

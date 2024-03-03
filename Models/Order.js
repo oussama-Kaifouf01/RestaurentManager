@@ -1,45 +1,14 @@
-﻿class Order
-{
+const mongoose = require('mongoose');
 
-constructor (/*ArrayList<OrderItem>*/ orderItems)                
-{
-this.orderId = 0;                            
-this.orderItems = null;                            
-this.totalPrice = null;                            
-}                    
-
-/*Integer*/ getOrderId ()            
-{
-
-}                
-
-setOrderId (/*Integer*/ orderId)            
-{
-
-}                
-
-/*ArrayList<OrderItem>*/ getOrderItems ()            
-{
-
-}                
-
-setOrderItems (/*ArrayList<OrderItem>*/ orderItems)            
-{
-
-}                
-
-/*Integer*/ getTotalPrice ()            
-{
-
-}                
-
-setTotalPrice (/*Integer*/ totalPrice)            
-{
-
-}                
-
-/*String*/ toString ()            
-{
-
-}                
-}
+const orderSchema = new mongoose.Schema({
+    orderItems:
+    {
+        orderItems: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'OrderItem'
+        }]
+    }
+    ,
+    totalPrice: Number
+})
+module.exports = mongoose.model('Order', orderSchema);

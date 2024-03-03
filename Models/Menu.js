@@ -1,23 +1,14 @@
-﻿class Menu
-{
+const mongoose = require('mongoose');
 
-constructor ()                
-{
-this.meals = null;                            
-}                    
+const menuSchema = new mongoose.Schema({
+    meals:
+    {
+        meals: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Meal'
+        }]
+    }
+})
 
-/*ArrayList<Meal>*/ getMeals ()            
-{
 
-}                
-
-importFromJsonFile (/*String*/ filePath)            
-{
-
-}                
-
-/*String*/ toString ()            
-{
-
-}                
-}
+module.exports = mongoose.model('Menu', menuSchema);
