@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+
+
+
 const mongoose = require('./config/db');
 const restaurentRouter = require('./routes/RestaurentRoute');
 
