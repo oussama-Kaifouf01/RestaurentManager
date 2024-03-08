@@ -1,26 +1,20 @@
-const express = require('express');
-const router = express.Router();
+const Meal = require('../controllers/MealController.js');
 
-const MealController = require('../controllers/MealController');
+const router = require('express').Router();
 
-// @route   GET /meals
-// @desc    Get all meals
-// @access  Public
-router.get('/', MealController.getMeals);
+// @route    GET /Meal
+router.get('/', Meal.getMeals);
 
-// @route   POST /meals
-// @desc    Create a new meal
-// @access  Public
-router.post('/', MealController.createMeal); 
+// @route    GET /Meal/:id
+router.get('/:id', Meal.getMealById);
 
-// @route   GET /meals/:id
-// @desc    Get single meal by id
-// @access  Public  
-router.get('/:id', MealController.getMealById);
+// @route    POST /Meal
+router.post('/', Meal.createMeal);
 
-// @route   DELETE /meals/:id
-// @desc    Delete a meal
-// @access  Public
-router.delete('/:id', MealController.deleteMeal);
+// @route    PUT /Meal/:id
+router.put('/:id', Meal.updateMeal);
+
+// @route    DELETE /Meal/:id
+router.delete('/:id', Meal.deleteMeal);
 
 module.exports = router;

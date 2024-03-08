@@ -12,8 +12,16 @@ mongoose.connection.on('connected', () => {
 // Express middleware
 app.use(express.json());
 
-// Use Restaurent routes
-app.use('/api/restaurents', restaurentRouter);
+
+// Routes
+app.use('/api/restaurents', require('./routes/RestaurentRoute'));
+app.use('/api/customers', require('./routes/CustomerRoute'));
+app.use('/api/kitchenstaff', require('./routes/KitchenStaffRoute'));
+app.use('/api/managers', require('./routes/ManagerRoute'));
+app.use('/api/orders', require('./routes/OrderRoute'));
+app.use('/api/orderitems', require('./routes/OrderItemRoute'));
+app.use('/api/staff', require('./routes/StaffRoute'));
+app.use('/api/waiters', require('./routes/WaiterRoute'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -1,31 +1,20 @@
-const express = require('express');
-const router = express.Router();
+const Restaurent = require('../controllers/RestaurentController.js');
 
-const RestaurentController = require('../controllers/RestaurentController');
+const router = require('express').Router();
 
-// @route   GET /api/restaurents
-// @desc    Get all restaurents
-// @access  Public
-router.get('/', RestaurentController.getRestaurents); 
+// @route    GET /Restaurent
+router.get('/', Restaurent.getRestaurents);
 
-// @route   GET /api/restaurents/:id
-// @desc    Get single restaurent by id
-// @access  Public
-router.get('/:id', RestaurentController.getRestaurentById);
+// @route    GET /Restaurent/:id
+router.get('/:id', Restaurent.getRestaurentById);
 
-// @route   POST /api/restaurents
-// @desc    Create a new restaurent
-// @access  Private 
-router.post('/', RestaurentController.createRestaurent);
+// @route    POST /Restaurent
+router.post('/', Restaurent.createRestaurent);
 
-// @route   PUT /api/restaurents/:id
-// @desc    Update a restaurent
-// @access  Private  
-router.put('/:id', RestaurentController.updateRestaurent);
+// @route    PUT /Restaurent/:id
+router.put('/:id', Restaurent.updateRestaurent);
 
-// @route   DELETE /api/restaurents/:id  
-// @desc    Delete a restaurent
-// @access  Private
-router.delete('/:id', RestaurentController.deleteRestaurent);
+// @route    DELETE /Restaurent/:id
+router.delete('/:id', Restaurent.deleteRestaurent);
 
 module.exports = router;
