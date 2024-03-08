@@ -15,3 +15,7 @@ logs/
 
 # Ignore dependencies installed by npm
 package-lock.json
+
+*.ps1
+
+test.js
