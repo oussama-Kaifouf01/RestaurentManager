@@ -2,7 +2,17 @@ const Customer = require('../controllers/CustomerController.js');
 
 const router = require('express').Router();
 
-// @route    GET /Customer
+// @route    GET /customers
+/**
+ * @swagger
+ * /api/customers:
+ *   get:
+ *     summary: Get all customers
+ *     responses:
+ *       200:  
+ *         description: Success
+*/
+
 router.get('/', Customer.getCustomers);
 
 // @route    GET /Customer/:id

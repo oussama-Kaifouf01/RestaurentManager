@@ -22,6 +22,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/restaurents', require('./routes/RestaurentRoute'));
+app.use('/api/chiefs', require('./routes/ChiefRoute'));
 app.use('/api/customers', require('./routes/CustomerRoute'));
 app.use('/api/kitchenstaff', require('./routes/KitchenStaffRoute'));
 app.use('/api/managers', require('./routes/ManagerRoute'));
@@ -29,7 +30,7 @@ app.use('/api/orders', require('./routes/OrderRoute'));
 app.use('/api/orderitems', require('./routes/OrderItemRoute'));
 app.use('/api/staff', require('./routes/StaffRoute'));
 app.use('/api/waiters', require('./routes/WaiterRoute'));
-
+app.use('/api/meals', require('./routes/MealRoute'));
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);

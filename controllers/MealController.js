@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const Meal = require('../models/Meal');
 
 // @route   GET /meals
 // @desc    Get all meals
@@ -53,6 +53,35 @@ exports.getMealById = async (req, res) => {
     }
     res.status(500).send('Server Error');
   }
+};
+
+/**
+ * @desc Update a meal
+ * @route PUT /meals/:id
+*/
+module.exports.updateMeal = async (req, res) => {
+  
+  const { id } = req.params;
+
+  try {
+
+    let meal = await Meal.findById(id);
+
+    if (!meal) {
+      return res.status(404).json({ msg: 'Meal not found'});
+    }
+
+    meal = await Meal.findByIdAndUpdate(id, req.body, {
+      new: true
+    });
+
+    res.json(meal);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+
 };
 
 // @route   DELETE /meals/:id
