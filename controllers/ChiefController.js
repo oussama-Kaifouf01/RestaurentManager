@@ -40,16 +40,18 @@ exports.createChief = async (req, res) => {
   try {
     const newChief = new Chief({
       name, 
-      picture
+      picture,
+     
     });
 
     const chief = await newChief.save();
     res.json(chief);
 
-  } catch (err) {
+  } 
+  catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
-  }
+  } 
 }
 
 // @desc    Update a chief

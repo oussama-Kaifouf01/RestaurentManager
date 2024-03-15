@@ -1,5 +1,11 @@
 const Restaurent = require('../models/Restaurent');
 
+
+
+
+
+
+
 // @desc    Get all restaurents
 // @route   GET /api/restaurents
 exports.getRestaurents = async (req, res) => {
@@ -16,6 +22,8 @@ exports.getRestaurents = async (req, res) => {
 // @route   GET /api/restaurents/:id
 exports.getRestaurentById = async (req, res) => {
   try {
+
+    console.log(req.params.id)
     const restaurent = await Restaurent.findById(req.params.id);
 
     if (!restaurent) {

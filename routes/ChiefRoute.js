@@ -67,7 +67,8 @@ router.get('/:id', Chief.getChief);
  *                   $ref: '#/components/schemas/Order'
  *     responses:
  *       200:
- *         description: Chief created successfully
+ *         description: Chief created successfully   
+ * 
  */
 router.post('/', Chief.createChief);
 

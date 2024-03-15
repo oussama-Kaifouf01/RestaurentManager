@@ -2,6 +2,8 @@ const Manager = require('../controllers/ManagerController.js');
 
 const router = require('express').Router();
 
+
+
 // @route    GET /Manager
 router.get('/', Manager.getManagers);
 
